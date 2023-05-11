@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$bgColor: #000000d6;
+$headText: #ffd500a6;
+$textColor: white;
+$headFont: fantasy;
+$defaultFont: sans-serif;
+$boardBgColor: rgb(1 18 33 / 72%);
+
+.header {
+  background-color: $bgColor;
+  color: $headText;
+  font-family: $headFont;
+  height: 20vh;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreboard {
+  height: 90vh;
+  background-color: $boardBgColor;
+  color: $textColor;
+  font-family: $defaultFont;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5;
+  text-align: center;
+}
+.result-info {
+  font-size: 24px;
+  padding: 10px;
+  margin: 20px auto;
+}
+.round-info {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.score-box {
+  width: 100%;
+  margin: 20px;
+  height: 20vh;
+  font-size: 20px;
+}
+.sign {
+  font-size: 50px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.play-button {
+  font-size: 70px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px;
+  width: 160px;
+  height: 160px;
+}
+
+.footer {
+  height: 10vh;
+  background-color: $bgColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $textColor;
+  width: 100%;
+}
