@@ -8,15 +8,27 @@ let roundWinner = "";
 let playerScore = 0,
   computerScore = 0;
 rock.addEventListener("click", () => game("rock", rockIcon));
-paper.addEventListener("click", () => game("paper",paperIcon));
-scissor.addEventListener("click", () => game("scissor",scissorIcon));
+paper.addEventListener("click", () => game("paper", paperIcon));
+scissor.addEventListener("click", () => game("scissor", scissorIcon));
 
 const playerPoint = document.getElementById("playerScore");
 const computerPoint = document.getElementById("computerScore");
 const result = document.querySelector(".result");
 const info = document.querySelector(".info");
 const playerSign = document.getElementById("player-sign");
-const computerSign = document.getElementById('computer-sign');
+const computerSign = document.getElementById("computer-sign");
+
+const gameOverModal = document.getElementById("game-over-modal");
+const gameOverResult = document.getElementById("game-over-result");
+const close = document.querySelector(".close");
+const playAgain = document.getElementById("play-again-btn");
+
+playAgain.addEventListener("click", () => {
+  location.reload();
+});
+close.addEventListener("click", () => {
+  gameOverModal.style.display = "none";
+});
 
 function game(playerSelection, icon) {
   if (playerScore == 5 || computerScore == 5) {
@@ -31,11 +43,14 @@ function game(playerSelection, icon) {
   playerPoint.textContent = "Player: " + playerScore;
   computerPoint.textContent = "Computer: " + computerScore;
   if (playerScore == 5) {
-    alert("player wins");
+    gameOverResult.textContent = "win!";
+    gameOverModal.style.display = "block";
     return;
   }
   if (computerScore == 5) {
-    alert("computer wins");
+    gameOverResult.textContent = "lose!";
+    gameOverModal.style.display = "block";
+    return;
   }
 }
 
@@ -43,16 +58,13 @@ function getComputerChoice() {
   let computerSelection = Math.floor(Math.random() * 3 + 1);
   if (computerSelection == 1) {
     computerSelection = "rock";
-    computerSign.textContent=rockIcon;
-
+    computerSign.textContent = rockIcon;
   } else if (computerSelection == 2) {
     computerSelection = "paper";
     computerSign.textContent = paperIcon;
-
   } else {
     computerSelection = "scissor";
     computerSign.textContent = scissorIcon;
-
   }
   return computerSelection;
 }
@@ -91,23 +103,3 @@ function playRound(playerSelection, computerSelection) {
 
   return roundWinner;
 }
-// function game(){
-//     let playerTurn ='';
-//     let computerTurn ='';
-//     let roundWinner = '';
-//     for(i=0;i<5;i++){
-//         playerTurn = playerChoice();
-//         computerTurn = getComputerChoice();
-//         playRound(playerTurn,computerTurn);
-//     }
-//     if(playerScore>computerScore){
-//         console.log("player wins");
-//     }
-//     else{
-//         console.log("computer wins");
-//     }
-//     console.log(playerScore);
-//     console.log(computerScore);
-
-// }
-// game();
