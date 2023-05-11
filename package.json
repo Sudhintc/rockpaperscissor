@@ -1,0 +1,29 @@
+{
+  "name": "rockpaperscissor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sudhintc/rockpaperscissor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sudhintc/rockpaperscissor/issues"
+  },
+  "homepage": "https://github.com/Sudhintc/rockpaperscissor#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0"
+  },
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}
